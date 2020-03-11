@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const express = require('express');
 
 function routes(Book) {
@@ -28,7 +29,7 @@ function routes(Book) {
         res.send(err);
       }
       if (book) {
-        req.book = book
+        req.book = book;
         return next();
       }
       return res.sendStatus(404);
@@ -76,6 +77,6 @@ function routes(Book) {
       });
     });
   return bookRouter;
-};
+}
 
 module.exports = routes;
